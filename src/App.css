@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  min-width: 100%;
+  width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.details-div{
+  padding-top:2.5em;
+  margin-top: .5em;
+  text-align: center;
+  margin-bottom:2em;
+  min-height:40%;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+h2 {
+  font-size:72px;
+}
+
+.App-intro {
+  font-size: large;
+}
