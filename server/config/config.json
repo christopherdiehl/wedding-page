@@ -1,0 +1,37 @@
+{
+  "development": {
+    "username": "chris",
+    "password": "chris",
+    "database": "node-api-dev",
+    "host": "127.0.0.1",
+    "dialect": "postgresql",
+    "port":5432,
+    "jwtSecret": "production shhh don't tell anyone",
+    "appPort" : 8080,
+    "email" : "foo@example.com",
+    "emailPass" : "foobar"
+  },
+  "test": {
+    "username": "test",
+    "password": "test",
+    "database": "node_api_test",
+    "host": "127.0.0.1",
+    "dialect": "postgresql",
+    "port":5432,
+    "jwtSecret": "production shhh don't tell anyone",
+    "appPort" : 8080,
+    "email" : "foo@example.com",
+    "emailPass" : "foobar"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "jwtSecret": "production shhh don't tell anyone",
+    "appPort" : 8080,
+    "email" : "foo@example.com",
+    "emailPass" : "foobar"
+  }
+}
