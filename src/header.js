@@ -69,7 +69,7 @@ export default function Header(props) {
       <StyledRow>
         <Col xsHidden={true} md={2}/>
         <Col xs={18} md={8}>
-          <StyledH1>Emily & Chris </StyledH1>
+          <StyledH1>Chris & Emily </StyledH1>
         </Col>
         <Col xsHidden={true} md={2}/>
       </StyledRow>

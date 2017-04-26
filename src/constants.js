@@ -15,7 +15,7 @@ export const AppWrapper = styled.div`
   padding-right:5%;
   background-color: rgb(255, 255, 255);
   width:100%;
-  height:300px;
+  height:100%;
   align:center;
   border-radius: 5px;
 `;

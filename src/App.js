@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './header';
-import { Collapse, Button } from 'react-bootstrap';
+import { Collapse, Button, Checkbox } from 'react-bootstrap';
 import FieldGroup from './fieldGroup';
 import MyAlert from './alert';
 import { InnerWrapper, AppWrapper, DetailsDiv } from './constants';
@@ -67,9 +67,10 @@ class App extends Component {
                   <FieldGroup
                     id="formControlsEmail"
                     type="text"
-                    label="Plus one"
-                    placeholder="Enter guests name"
+                    label="Your plus one's name"
+                    placeholder="Enter your plus one's name"
                   />
+                  <Checkbox >I'm attending</Checkbox>
                   <Button bsStyle="primary" onClick={()=>{this.setState({showAlert: true })}} bsSize="large" block>Submit</Button>
                 </div>
               </div>
