@@ -1,6 +1,7 @@
 // Load required packages
 const Guest = require('../models/guest');
 
+/*plus one field optional*/
 exports.rsvp = function(req,res) {
   let { guest, plusone, attending } = req.body;
   let status = 400;
@@ -9,7 +10,7 @@ exports.rsvp = function(req,res) {
   } else {
     attending = true;
   }
-  if(guest && plusone) {
+  if( guest ) {
     status = 200;
     let guestInstance = new Guest({
       name: guest,

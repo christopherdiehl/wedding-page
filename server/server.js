@@ -7,8 +7,8 @@ const config = require('./config/config')[env];
 const mongoose = require('mongoose');
 const mongoDB = config.host+':'+config.port;
 const options = {
-  user: config.username,
-  pass: config.password
+  // user: config.username,
+  // pass: config.password
 }
 mongoose.connect(mongoDB,options);
 
