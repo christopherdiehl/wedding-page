@@ -5,7 +5,7 @@ const config = require('./config/config')[env];
 
 /*SETUP DB*/
 const mongoose = require('mongoose');
-const mongoDB = config.host+config.port;
+const mongoDB = config.host+':'+config.port;
 mongoose.connect(mongoDB);
 
 if(process.env.NODE_ENV === "production") {

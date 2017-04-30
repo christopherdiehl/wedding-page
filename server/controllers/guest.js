@@ -2,6 +2,7 @@
 const Guest = require('../models/guest');
 
 exports.rsvp = function(req,res) {
+  console.log('rsvp recieved');
   res.send(200);
 }
 // // Create endpoint /api/user for POST
