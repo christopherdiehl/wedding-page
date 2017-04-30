@@ -27,6 +27,9 @@ const StyledLi = styled.li`
   text-transform:uppercase;
   text-size-adjust:100%;
   cursor: pointer;
+  &:hover {
+    color: #d2d1d1;;
+  }
 `;
 const StyledH1 = styled.h1`
   text-transform: capitalize;
@@ -66,14 +69,14 @@ export default function Header(props) {
         </Col>
         <Col xsHidden={true} md={4}/>
       </StyledRow>
-      <StyledRow>
+      <Row>
         <Col xsHidden={true} md={2}/>
         <Col xs={18} md={8}>
           <StyledH1>Chris & Emily </StyledH1>
         </Col>
         <Col xsHidden={true} md={2}/>
-      </StyledRow>
-      <StyledRow>
+      </Row>
+      <Row>
         <Col xsHidden={true} md={2}/>
         <Col xs={18} md={8}>
           <StyledP>
@@ -81,7 +84,7 @@ export default function Header(props) {
           </StyledP>
         </Col>
         <Col xsHidden={true} md={2}/>
-      </StyledRow>
+      </Row>
     </div>
   );
 }

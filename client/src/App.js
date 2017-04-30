@@ -75,6 +75,11 @@ class App extends Component {
               <div>
                 <DetailsDiv>
                   <h1>Please send us that skrilla!</h1>
+                  <p>On a more serious note, we would like to thank you for joining us on our special day.
+                    Due to our circumstances in life, we have already purchased the vast majority of traditional wedding gifts.
+                    Because of this, we would appreciate if you would give money instead.
+                    <br /> Thanks!
+                  </p>
                 </DetailsDiv>
               </div>
             </Collapse>
@@ -87,6 +92,7 @@ class App extends Component {
                   handleDismiss={() => {this.setState({ showAlert : false})}}
                 />
                 <div className="details-div">
+                  <h4>Thanks for RSVPing. <br /> We are looking forward to spending our special day with you!</h4>
                   <FieldGroup
                     id="formControlsText"
                     type="text"

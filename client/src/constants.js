@@ -6,6 +6,7 @@ export const InnerWrapper = styled.div`
   margin-left:auto;
   margin-right:auto;
   margin-top:30px;
+  padding-top:0px;
   ${ media.handheld`
     width:80%;
   ` }
