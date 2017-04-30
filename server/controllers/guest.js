@@ -2,8 +2,30 @@
 const Guest = require('../models/guest');
 
 exports.rsvp = function(req,res) {
+  let { guest, plusone, attending } = req.body;
+  let status = 400;
+  if (attending === '') {
+    attending = false;
+  } else {
+    attending = true;
+  }
+  if(guest && plusone) {
+    status = 200;
+    let guestInstance = new Guest({
+      name: guest,
+      plusOne: plusone,
+      attending: attending
+    });
+    guestInstance.save(function(err){
+      if (err) {
+        console.error(err);
+        status = 500;
+      }
+    });
+  }
+  console.log(`guest: ${guest} plusone: ${plusone} attending: ${attending}`);
   console.log('rsvp recieved');
-  res.send(200);
+  res.sendStatus(status);
 }
 // // Create endpoint /api/user for POST
 // exports.postUser = function(req, res) {

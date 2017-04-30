@@ -3,8 +3,10 @@ var mongoose = require('mongoose');
 
 //Define a schema
 
-var Guest = new mongoose.Schema({
-    name                   : String,
-    plusOneName            : Date,
-    attending              : Boolean
+var GuestSchema = new mongoose.Schema({
+  name                   : String,
+  plusOne                : String,
+  attending              : Boolean
 });
+
+module.exports = mongoose.model('Guest',GuestSchema);
