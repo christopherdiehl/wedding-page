@@ -25,6 +25,7 @@ export const DetailsDiv = styled.div`
   margin-top: .5em;
   text-align: center;
   margin-bottom:2em;
+  color: black !important;
   min-height:40%;
   ${ media.handheld`
     padding-top:1em;

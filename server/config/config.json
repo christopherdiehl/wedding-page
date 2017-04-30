@@ -2,9 +2,7 @@
   "development": {
     "username": "chris",
     "password": "chris",
-    "database": "node-api-dev",
     "host": "localhost",
-    "dialect": "postgresql",
     "port":27017,
     "jwtSecret": "production shhh don't tell anyone",
     "appPort" : 8080,

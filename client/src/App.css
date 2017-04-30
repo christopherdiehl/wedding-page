@@ -16,12 +16,15 @@
   text-align: center;
   margin-bottom:2em;
   min-height:40%;
+  color: black !important;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+body{
+  overflow-x: hidden;
+}
 h2 {
   font-size:72px;
 }

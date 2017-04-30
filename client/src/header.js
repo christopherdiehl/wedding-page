@@ -34,7 +34,7 @@ const StyledH1 = styled.h1`
   font-weight: 100;
   font-size: 72px;
   line-height: 79.2px;
-  color:rgb(28, 28, 28);
+  color: white !important;
   letter-spacing:1px;
   display:block
   width:100%;

@@ -5,12 +5,15 @@ import { Collapse, Button, Checkbox } from 'react-bootstrap';
 import FieldGroup from './fieldGroup';
 import MyAlert from './alert';
 import { InnerWrapper, AppWrapper, DetailsDiv } from './constants';
-
+import api from './api';
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'details'
+      view: 'details',
+      attending: false,
+      guest: '',
+      plusone: '',
     }
   }
   changeView = (view) => {
@@ -18,7 +21,16 @@ class App extends Component {
       view: view
     });
   }
+  _onChange = (e) => {
+    this.setState({ [e.target.name] : e.target.value });
+  }
   _onSubmit = () => {
+    const data ={
+      guest: this.state.guest,
+      attending: this.state.attending,
+      plusone: this.state.plusone
+    };
+    api.rsvp(data).then((res) => { console.log(res);})
     this.setState({ alert: true});
   }
   render() {
@@ -63,15 +75,22 @@ class App extends Component {
                     type="text"
                     label="Your name"
                     placeholder="Enter your name"
+                    name="guest"
+                    onChange={this._onChange}
                   />
                   <FieldGroup
                     id="formControlsEmail"
                     type="text"
                     label="Your plus one's name"
                     placeholder="Enter your plus one's name"
+                    onChange={this._onChange}
+                    name="plusone"
                   />
-                  <Checkbox >I'm attending</Checkbox>
-                  <Button bsStyle="primary" onClick={()=>{this.setState({showAlert: true })}} bsSize="large" block>Submit</Button>
+                  <Checkbox
+                    name="attending"
+                    onChange={(e) => { this.setState({[e.target.name]: e.target.checked}) }}
+                    >I'm attending</Checkbox>
+                  <Button bsStyle="primary" onClick={this._onSubmit} bsSize="large" block>Submit</Button>
                 </div>
               </div>
             </Collapse>

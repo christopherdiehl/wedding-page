@@ -6,7 +6,11 @@ const config = require('./config/config')[env];
 /*SETUP DB*/
 const mongoose = require('mongoose');
 const mongoDB = config.host+':'+config.port;
-mongoose.connect(mongoDB);
+const options = {
+  user: config.username,
+  pass: config.password
+}
+mongoose.connect(mongoDB,options);
 
 if(process.env.NODE_ENV === "production") {
   if(cluster.isMaster) {
