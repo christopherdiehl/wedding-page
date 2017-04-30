@@ -14,6 +14,9 @@ class App extends Component {
       attending: false,
       guest: '',
       plusone: '',
+      showAlert: false,
+      error: false,
+      alertText: ""
     }
   }
   changeView = (view) => {
@@ -30,8 +33,21 @@ class App extends Component {
       attending: this.state.attending,
       plusone: this.state.plusone
     };
-    api.rsvp(data).then((res) => { console.log(res);})
-    this.setState({ alert: true});
+    api.rsvp(data).then((res) => {
+      if (res.status !== 200) {
+        this.setState({
+          error: true,
+          alertText: "An error occured. Please try again later",
+          showAlert: true
+        });
+      } else {
+        this.setState({
+          showAlert: true,
+          error: false,
+          alertText: "Thank you for filling out this form. We hope to see you soon!"
+        });
+      }
+    });
   }
   render() {
     return (
@@ -65,8 +81,9 @@ class App extends Component {
             <Collapse in={this.state.view === 'rsvp'} >
               <div>
                 <MyAlert
-                  text={'Thank you for filling out this form. We hope to see you soon!'}
+                  text={this.state.alertText}
                   visible={this.state.showAlert}
+                  bsStyle={this.state.error ? 'danger' : 'success'}
                   handleDismiss={() => {this.setState({ showAlert : false})}}
                 />
                 <div className="details-div">
